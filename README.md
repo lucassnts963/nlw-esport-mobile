@@ -18,7 +18,7 @@ Aplicativo para lhe ajudar a conectar-se com seu duo e aproveitar com companhia 
 - [ ] Gradient colors
 - [ ] React Navigation Stack
 
-## :hammer_and_wrench: Features 
+## :hammer_and_wrench: Features
 
 - [ ] Conexão com o backend
 - [ ] Listagem dos Games
@@ -40,7 +40,6 @@ expo start
 
 Lembre-se de criar o seu servidor. [eSport - Server](https://github.com/lucassnts963/nlw-esport-server)
 
-
 ## 📄 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
@@ -49,5 +48,13 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 - [ ] :cloud: [Servidor](https://github.com/lucassnts963/nlw-esport-server)
 - [ ] :computer: [Web](https://github.com/lucassnts963/nlw-esport-web)
+
+## :hammer_and_wrench: New Features
+
+- [ ] Implementar notificações
+- [ ] Login com discord
+- [ ] Incrementar com funcionalidades do GamePlay
+- [ ] Funcionalidade de match
+- [ ] Push notification
 
 <br />
