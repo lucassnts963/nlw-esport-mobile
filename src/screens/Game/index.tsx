@@ -11,10 +11,12 @@ import { styles } from './styles';
 import { GameParams } from '../../@types/navigation';
 import { THEME } from '../../theme';
 import { Heading } from '../../components/Heading';
-import { DuoCard } from '../../components/DuoCard';
+import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+import { DuoMatch } from '../../components/DuoMatch';
 
 export function Game() {
-  const [duos, setDuos] = useState([]);
+  const [duos, setDuos] = useState<DuoCardProps[]>([]);
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('');
 
   const navigation = useNavigation();
   const route = useRoute();
@@ -22,6 +24,13 @@ export function Game() {
 
   function handleGoBack() {
     navigation.goBack();
+  }
+
+  async function getDiscordUser(adsId: string) {
+    fetch(`http://192.168.254.132:3333/ads/${adsId}/discord`)
+      .then((response) => response.json())
+      .then((data) => setDiscordDuoSelected(data.discord))
+      .catch(console.error);
   }
 
   useEffect(() => {
@@ -54,7 +63,7 @@ export function Game() {
         <FlatList
           data={duos}
           renderItem={({ item }) => (
-            <DuoCard data={item} onConnect={() => {}} />
+            <DuoCard data={item} onConnect={() => getDiscordUser(item.id)} />
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -65,6 +74,11 @@ export function Game() {
           ListEmptyComponent={() => (
             <Text style={styles.emptyListText}>Ainda não há anúncio.</Text>
           )}
+        />
+        <DuoMatch
+          visible={discordDuoSelected.length > 0}
+          discord={discordDuoSelected}
+          onClose={() => setDiscordDuoSelected('')}
         />
       </SafeAreaView>
     </Background>
