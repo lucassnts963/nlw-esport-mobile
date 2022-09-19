@@ -4,15 +4,15 @@ import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Entypo } from '@expo/vector-icons';
 
-import logoImage from '../../assets/logo-nlw-esports.png';
-import { Background } from '../../components/Background';
+import logoImage from '../../../assets/logo-nlw-esports.png';
+import { Background } from '../../../components/Background';
 
 import { styles } from './styles';
-import { GameParams } from '../../@types/navigation';
-import { THEME } from '../../theme';
-import { Heading } from '../../components/Heading';
-import { DuoCard, DuoCardProps } from '../../components/DuoCard';
-import { DuoMatch } from '../../components/DuoMatch';
+import { GameParams } from '../../../@types/navigation';
+import { THEME } from '../../../theme';
+import { Heading } from '../../../components/Heading';
+import { DuoCard, DuoCardProps } from '../../../components/DuoCard';
+import { DuoMatch } from '../../../components/DuoMatch';
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([]);
